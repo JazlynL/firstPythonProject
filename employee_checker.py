@@ -77,24 +77,24 @@ print("\n")
 #Bonuses
 
 #Taking out trailing spaces//Ignoring captilization  bonuses 1 and 2.
-accept = input("Do you work for " + COMPANY_NAME + "?\n(yes/no): ")
-if accept == "yes":
-    name = input("What is your name?\nName: ").strip().lower()
-    for emp_name in EMPLOYEES:
-        if name.casefold() == emp_name.casefold():
-            print("Thank you " + emp_name + ", you are now checked in.")
-            break
-    else:
-            print("You're not an employee")
-else:
-    print("This service is not for you. Exiting program...")
-    exit()
+# accept = input("Do you work for " + COMPANY_NAME + "?\n(yes/no): ")
+# if accept == "yes":
+#     name = input("What is your name?\nName: ").strip().lower()
+#     for emp_name in EMPLOYEES:
+#         if name.casefold() == emp_name.casefold():
+#             print("Thank you " + emp_name + ", you are now checked in.")
+#             break
+#     else:
+#             print("You're not an employee")
+# else:
+#     print("This service is not for you. Exiting program...")
+#     exit()
 
 
 
 #Allow all inputs that start with Y = yes  completed bonus 3/4
 
-# accept = input("Do you work for " + COMPANY_NAME + "?\n(yes/no): ").lower()
+# accept = input("Do you work for " + COMPANY_NAME + "?\n(yes/no): ").strip().lower()
 # if accept.startswith("y"):
 #     name = input("What is your name?\nName: ")
 #     for emp_name in EMPLOYEES:
@@ -110,13 +110,35 @@ else:
 
 
 
-# if user doesnt input yes or no  make them exit the program.
 
-accept = input("Do you work for " + COMPANY_NAME + "?\n(yes/no): ")
-if "y" != accept[0] and accept[0] != "n":
+
+    #alternative solution
+
+# accept = input("Do you work for " + COMPANY_NAME + "?\n(yes/no): ").strip().lower()
+# if accept[0] == "y":
+#     name = input("What is your name?\nName: ")
+#     for emp_name in EMPLOYEES:
+#         if name == emp_name:
+#             print("Thank you " + emp_name + ", you are now checked in.")
+#
+#             break
+#     else:
+#         print("You're not an employee")
+# else:
+#     print("This service is not for you. Exiting program...")
+#     exit()
+
+
+
+# if user doesnt input yes or no  make the user reenter selection.
+
+accept = " "
+while accept == "" or accept[0] != "y" and accept[0] != "n":
+    accept = input("Do you work for " + COMPANY_NAME + "?\n(yes/no): ").strip().lower()
+if accept[0] != "n":
     name = input("What is your name?\nName: ")
     for emp_name in EMPLOYEES:
-        if name == emp_name:
+        if name.casefold() == emp_name.casefold():
             print("Thank you " + emp_name + ", you are now checked in.")
 
             break
