@@ -1,7 +1,8 @@
 import array
 
+tech_company = "Boston Tech Group"
 print("My First CLI in python")
-
+print ("")
 #name = input("What is your name ? \n Your Name:")
 #print("Hello" + name)
 
